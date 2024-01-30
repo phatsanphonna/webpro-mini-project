@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
+  <title>Variables - JavaScript Guidebook</title>
+</head>
+
+<body>
+  <div class="container mx-auto p-4 flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold">Variables - JavaScript Guidebook</h2>
+
+    <hr>
+
+    <div class="flex flex-col gap-2">
+      <p>
+        In programming, a variable is simply a name that you give to a value so that you can access that value later.
+        You can think of a variable as a label that can be tagged to a certain value, so you can refer to the value
+        using the label.
+      </p>
+      <p>
+        To declare a variable, you need to type the keyword let followed by the variable name.
+      </p>
+      <p>
+        The first line in the code tells JavaScript to associate the <code>message</code> variable with the value
+        <code>Hello World!</code>:
+      </p>
+      <pre><code class="language-js">let message = "Hello World!"</code></pre>
+
+      <p>
+        In the second line, JavaScript is instructed to print the value of <code>message</code>, and that's exactly what
+        it does.
+      </p>
+      <p>
+        You can change the value of your variable by re-assigning another value as follows:
+      </p>
+      <pre><code class="language-js">message = "Hello World!"
+print(message)
+message = "Nice weather!"
+print(message)</code></pre>
+      <p>
+        Run the file and you'll see two lines printed as the output:
+      </p>
+
+      <pre><code class="language-js">Hello World!
+Nice weather!</code></pre>
+      <p>
+        Variables are used to reference data so that you can use the same data multiple times in your program.
+      </p>
+      <p>
+        Next, let's see some rules for naming variables in JavaScript.
+      </p>
+
+      <h4 class="text-2xl font-medium">Variable naming</h4>
+      <p>
+        JavaScript has a few naming rules that you need to know to avoid naming errors.
+      </p>
+      <p>
+        Variable names can only contain alphabet letters, numbers, and underscores (<code>_</code>). This means you can
+        name your variable <code>message</code>, <code>message_1</code>, <code>message_2</code>.
+      </p>
+      <p>
+        The first character of the variable name must not be a number. <code>message_1</code> is okay.
+        <code>1_message</code> is not.
+      </p>
+
+      <p>
+        You can't use reserved keywords such as <code>console</code> because they are used by JavaScript to do certain
+        things. There
+        are many other keywords used by JavaScript that you'll learn in the following sections such as <code>if</code>,
+        <code>for</code>, and
+        <code>while</code>.
+      </p>
+      <p>
+        Variable names are case-sensitive, which means <code>Message</code>, <code>MESSAGE</code>, and
+        <code>message</code> can be used to create three
+        different variables. But of course, I don't recommend using similar names as it causes confusion.
+      </p>
+      <p>
+        Sometimes, you need more than one word to declare a variable name. JavaScript has two naming conventions that
+        are used worldwide:
+      </p>
+      <ol class="list-decimal ml-8">
+        <li>camelCase</li>
+        <li>snake_case</li>
+      </ol>
+      <p>
+        Camel case is a naming convention that uses an uppercase letter for the first character for subsequent words.
+        Here's an example:
+      </p>
+      <pre><code class="language-js">let myAwesomeVariable</code></pre>
+      <p>
+        The snake case naming convention uses an underscore to separate words. Here's an example:
+      </p>
+      <pre><code class="language-js">let my_awesome_variable</code></pre>
+      <p>
+        Both are acceptable naming conventions, but you should stick to one of them in your code to avoid confusion.
+      </p>
+
+      <h4 class="text-2xl font-medium">Constant Variable</h4>
+      <p>
+        There are times when you need to store a value that never changes in a variable.
+      </p>
+      <p>
+        A constant variable is a variable that doesn't change its value as long as the program is running. In other
+        programming languages, changing the value of a constant will produce an error.
+      </p>
+      <p>
+        In JavaScript, a constant variable is declared using the const keyword.
+      </p>
+      <p>
+        The following shows how to declare 2 constants in JavaScript:
+      </p>
+      <pre><code class="language-js">const FILE_SIZE_LIMIT = 2000
+const MAX_SPEED = 300</code></pre>
+      <p>
+        The naming convention for a constant is to use all uppercase letters, although using lowercase letters also
+        works. The uppercase is just a standard to make constants stand out more.
+      </p>
+
+      <h4 class="text-2xl font-medium">The var keyword</h4>
+      <p>
+        The var keyword is used to declare variables with a global scope. This keyword was the only keyword you can use
+        to declare variables before JavaScript released the new let and const keyword in 2015.
+      </p>
+      <p>
+        As of today, you should avoid using <code>var</code> if you can, since <code>var</code> can introduce bugs that
+        you can avoid by using the
+        <code>let</code> keyword.
+      </p>
+      <p>
+        To show you what I mean, consider the following example:
+      </p>
+      <pre><code class="language-js">if(true) {
+    var name = "Nathan";
+}
+
+console.log(name)</code></pre>
+      <p>
+        The code above will print the name variable just fine, but it really should not because the variable name is
+        declared inside the if block.
+      </p>
+      <p>
+        This is because any variable declared using the <code>var</code> keyword is accessible from everywhere. The
+        scope of that
+        variable is global.
+      </p>
+      On the other hand, the <code>let</code> keyword has a block scope, which means the variable is only accessible
+      from the block
+      and all its child blocks.
+      <p>
+        But why bother with scoping the variable? This is because when you have hundreds or thousands of code lines, it
+        can become frustrating to trace an error that occurs because of global variables.
+      </p>
+      <p>
+        There's a principle in software development called "principles of least exposure", which means you don't expose
+        any part of your program that's unnecessary.
+      </p>
+      <p>
+        Block scoping a variable ensures that a variable is exposed and accessible only in parts of your codebase that
+        require the variable.
+      </p>
+      <p>
+        A variable declared using the <code>let</code> keyword is identical to a variable declared using
+        <code>var</code> except for the scope
+        level.
+      </p>
+      <pre><code class="language-js">if(true) {
+    let name = "Nathan";
+}
+
+console.log(name)  // Error: name is not defined</code></pre>
+
+      <p>
+        This also means that you now have <code>var</code>, <code>let</code>, and <code>const</code> keywords to declare
+        a variable. Which one to use?
+      </p>
+      <p>
+        In general, you can declare a variable with <code>const</code> first. When you code your application and realize
+        that you
+        need to change the variable assignment, you can change the declaration to let.
+      </p>
+      <p>
+        If you know from the start that the variable's value will change, then you can use <code>let</code> immediately.
+        Just don't
+        use <code>var</code> today or people might get mad at you.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

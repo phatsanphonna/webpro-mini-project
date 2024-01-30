@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
+  <title>Code Structure - JavaScript Guidebook</title>
+</head>
+
+<body>
+  <div class="container mx-auto p-4 flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold">Code Structure - JavaScript Guidebook</h2>
+
+    <hr>
+
+    <div class="flex flex-col gap-2">
+      <p>
+        A computer program is a series of pieces of code written in a text file. These text files are then run through a
+        software that's designed specially for running the code. The Node.js software you downloaded previously is the
+        tool that processes JavaScript code.
+      </p>
+      <p>
+        Before we go further, let's understand the structure of code.
+      </p>
+
+      <h4 class="text-2xl font-medium">Statements</h4>
+      <p>
+        A statement is a single instruction for the computer to run. Think of it like a sentence, but for computers. We
+        can end a statement by using a semicolon <code>;</code> just like we can end a sentence using a dot
+        <code>.</code>
+      </p>
+      <p>
+        You can write multiple statements in a single line, but the convention is to write one statement per line:
+      </p>
+      <pre><code class="language-js">// This is hard to read
+console.log("Hello World!"); console.log("I'm learning JavaScript");
+
+// Now it's better
+console.log("Hello World!");
+console.log("I'm learning JavaScript");</code></pre>
+
+      <h4 class="text-2xl font-medium">Comments</h4>
+      <p>
+        In programming, comments are text we use to communicate the context of the code written in the file.
+      </p>
+
+      <p>
+        To write a comment in JavaScript, you need to add two forward slashes <code>//</code> before the comment as
+        shown below:
+      </p>
+      <pre><code class="language-js">// This is a comment
+// This is also a comment
+
+// Below print two lines of statements
+console.log("Hello World!");
+console.log("I'm learning JavaScript");</code></pre>
+
+      <h4 class="text-2xl font-medium">Execution Flow</h4>
+      <p>
+        A language processor such as Node.js executes statements in a top-down approach. The statement written in the
+        first line will be executed before the second line, then continue down to the last line:
+      </p>
+      <pre><code class="language-js">console.log("Hello World!");
+console.log("I'm learning JavaScript");
+
+// Printing numbers
+console.log(1);
+console.log(2);
+console.log(3);</code></pre>
+
+      <h5 class="text-xl font-medium">Output</h5>
+
+      <pre><code class="language-txt">Hello World!
+I'm learning JavaScript
+1
+2
+3</code></pre>
+      <p>
+        If you want to print the numbers before the text, then you need to move the corresponding <code>console.log()</code> lines to
+        the top.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
