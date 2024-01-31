@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
+  <title>Type Conversion - JavaScript Guidebook</title>
+</head>
+
+<body>
+  <div class="container mx-auto p-4 flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold">Type Conversion - JavaScript Guidebook</h2>
+
+    <hr>
+
+    <div class="flex flex-col gap-2">
+      <p>
+        At times, you might want to convert one data type into another so that the program runs as expected.
+      </p>
+      <p>
+        For example, suppose you need to convert a string into an integer so you can perform an addition between
+        numbers.
+      </p>
+      <p>
+        If you have one of the numbers as a string, JavaScript joins them together instead of adding:
+      </p>
+      <pre><code class="language-js">let x = "7";
+let y = 5;
+
+console.log(x + y); // 75</code></pre>
+      <p>
+        To add the two numbers properly, you need to convert the <code>x</code> variable into an integer.
+      </p>
+      <p>
+        Changing the data from one type to another is also known as type conversion or type casting. There are 3
+        functions frequently used to do type conversion:
+      </p>
+      <ul class="list-disc ml-4">
+        <li>Number()</li>
+        <li>String()</li>
+        <li>Boolean()</li>
+      </ul>
+
+      <p>
+        As their name implies, these type conversion functions will attempt to convert any value you specified inside
+        the parentheses to the type of the same name.
+      </p>
+      <p>
+        To convert a string into an integer, you can use the <code>Number()</code> function:
+      </p>
+      <pre><code class="language-js">let x = "7";
+let y = 5;
+
+// Convert x to integer
+x = Number(x);
+
+console.log(x + y); // 12</code></pre>
+      <p>
+        On the other hand, the <code>String()</code> function converts a value of another type to a string. If you type
+        <code>String(true)</code>, then you'll get 'true' back.
+      </p>
+      <p>
+        Passing a value of the same type as the function has no effect. It will just return the same value back.
+      </p>
+
+      <h4 class="text-2xl font-medium">Type coercion</h4>
+      <p>
+        In JavaScript, type coercion is a process where a value of one type is implicitly converted into another type.
+      </p>
+      <p>
+        This is automatically done by JavaScript so that your code won't cause an error. But as you'll see in this
+        section, type coercion can actually cause undesired behavior in the program.
+      </p>
+      <p>
+        Let's consider what happens when you perform an addition between a <code>number</code> and a <code>string</code>
+        in JavaScript:
+      </p>
+      <pre><code class="language-js">console.log(1 + "1");</code></pre>
+
+      <p>
+        As you've seen in the previous section, JavaScript will consider the number as a string and join the two letters
+        as <code>11</code> instead of adding them (<code>1 + 1 = 2</code>)
+      </p>
+      <p>
+        But you need to know that other programming languages don't respond the same way.
+      </p>
+      <p>
+        Programming languages like Ruby or Python will respond by stopping your program and giving an error as feedback.
+        It will respond with something along the lines of "Cannot perform addition between a number and a string".
+      </p>
+      <p>
+        But JavaScript will see this and said: "I cannot do the operation you requested as it is, but I can do it if the
+        number <code>1</code> is converted to a <code>string</code>, so I'll do just that."
+      </p>
+      <p>
+        And that's exactly what type coercion is. JavaScript notices that it doesn't know how to execute your code, but
+        it doesn't stop the program and respond with an error.
+      </p>
+      <p>
+        Instead, it will change the data type of one of the values without telling you.
+      </p>
+      <p>
+        While type coercion doesn't cause any errors, the output is actually something you don't want either.
+      </p>
+
+      <h4 class="text-2xl font-medium">Type coercion rules</h4>
+      <p>
+        Type coercion rules are never stated clearly anywhere, but I did find some rules by trying various silly code
+        myself.
+      </p>
+      <p>
+        It seems that JavaScript will first convert data types to <code>string</code> when it finds different data
+        types:
+      </p>
+      <pre><code class="language-js">1 + "1" // "11"
+[1 ,2] + "1" // "1,21"
+true + "1" // "true1"</code></pre>
+
+      <p>
+        But the order of the values matters when you have an object. Writing objects first always returns numeric
+        <code>1</code>:
+      </p>
+      <pre><code class="language-js">{ a: 1 } + "1" // 1
+"1" + { a: 1 } // "1[object Object]"
+true + { a: 1 } // "true[object Object]"
+{ a: 1 } + 1 // 1</code></pre>
+
+      <p>
+        JavaScript can calculate between boolean and numeric types, because boolean values true and false implicitly has
+        the numeric value of <code>1</code> and <code>0</code>:
+      </p>
+      <pre><code class="language-js">true + 1 // 1+1 = 2
+false + 1 // 0+1 = 1
+[1,2] + 1 // "1,21"</code></pre>
+
+      <p>
+        Type coercion is always performed implicitly. When you assign the value as a variable, the variable type will
+        never change outside of the operation:
+      </p>
+      <pre><code class="language-js">let myNumber = 1;
+console.log(myNumber + "1"); // prints 11
+console.log(myNumber); // still prints number 1 and not string</code></pre>
+
+      <p>
+        You can try to find some more on your own, but you hopefully understand what type coercion is and how it works
+        by now.
+      </p>
+
+      <h4 class="text-2xl font-medium">Why you should avoid type coercion</h4>
+      <p>
+        JavaScript developers are generally divided into two camps when talking about type coercion:
+      </p>
+      <ul class="list-disc ml-4">
+        <li>Those who think it's a feature</li>
+        <li>Those who think it's a bug</li>
+      </ul>
+
+      <p>
+        If you ask me, I would recommend that you avoid using type coercion in your code all the time.
+      </p>
+      <p>
+        The reason is that I've never found a problem where type coercion is required for the solution, and when I need
+        to convert one type into another, it's always better to do so explicitly:
+      </p>
+      <pre><code class="language-js">let price = "50";
+let tax = 5;
+
+let totalPrice = Number(price) + Number(tax);
+
+console.log(totalPrice);</code></pre>
+
+      <p>
+        Using explicit type conversion functions such as <code>Number()</code> and <code>String()</code> will make your
+        code clear and transparent. You don't need to guess the correct data type required in your program.
+      </p>
+      <p>
+        Type coercion is one of the unique features in JavaScript that may confuse beginners, so it's good to clear it
+        up early.
+      </p>
+      <p>
+        Next, we'll learn about JavaScript operators.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

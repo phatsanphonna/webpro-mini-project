@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
+  <title>Operators - JavaScript Guidebook</title>
+</head>
+
+<body>
+  <div class="container mx-auto p-4 flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold">Operators - JavaScript Guidebook</h2>
+
+    <hr>
+
+    <div class="flex flex-col gap-2">
+      <p>
+        As the name implies, operators are symbols you can use to perform operations on your data.
+      </p>
+      <p>
+        You've seen some examples of using the plus <code>+</code> operator to join multiple strings and add two numbers
+        together. Of course, JavaScript has more than one operator as you'll discover in this section.
+      </p>
+      <p>
+        Since you've learned about data types and conversion previously, learning operators should be relatively easy.
+      </p>
+
+      <h4 class="text-2xl font-medium">Arithmetic operators</h4>
+      <p>
+        The arithmetic operators are used to perform mathematical operations like additions and subtractions.
+      </p>
+      <p>
+        These operators are frequently used with number data types. Here's an example:
+      </p>
+      <table class="table-fixed border border-collapse border-spacing-2">
+        <thead class="border border-collapse border-spacing-2">
+          <tr class="text-left bg-zinc-100">
+            <th class="border border-collapse border-spacing-2 p-2">Name</th>
+            <th class="border border-collapse border-spacing-2 p-2">Operation Example</th>
+            <th class="border border-collapse border-spacing-2 p-2">Meaning</th>
+          </tr>
+        </thead>
+        <tbody class="border border-collapse">
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Addition</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x + y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the sum between the two operands</td>
+          </tr>
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Subtraction</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x - y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the difference between the two operands
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Multiplication</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x * y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the multiplication between the two operands
+            </td>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Exponentiation</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x ** y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the value of the left operand raised to the power of the right operand
+            </td>
+          </tr>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Division</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x / y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the value of the left operand divided by the right operand
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Remainder</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x % y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the remainder of the left operand after being divided by the right operand
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Increment</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x++</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the operand plus one
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Decrement</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x--</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns the operand minus one
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        These operators are pretty straightforward, so you can try them on your own.
+      </p>
+      <p>
+        As you've seen in the previous section, the + operator can also be used on strings data to merge multiple
+        strings as one:
+      </p>
+      <pre><code class="language-js">let message = "Hello " + "human!";
+console.log(message); // Hello human!</code></pre>
+
+      <p>
+        When you add a number and a string, JavaScript will perform a type coercion and treats the number value as a
+        string value:
+      </p>
+      <pre><code class="language-js">let sum = "Hi " + 89;
+console.log(sum); // Hi 89</code></pre>
+
+      <p>
+        Using any other arithmetic operator with strings will cause JavaScript to return a <code>NaN</code> value.
+      </p>
+
+      <h4 class="text-2xl font-medium">Arithmetic operators</h4>
+      <p>
+        The next operator to learn is the assignment operator, which is represented by the equals <code>=</code> sign.
+      </p>
+      <p>
+        In JavaScript, the assignment operator is used to assign data or a value to a variable.
+      </p>
+      <p>
+        You've seen some examples of using the assignment operator before, so here's a reminder:
+      </p>
+      <pre><code class="language-js">// Assign the string value 'Hello' to the 'message' variable
+let message = "Hello";
+
+// Assign the Boolean value true to the 'on' variable
+let on = true;</code></pre>
+
+      <p>
+        You may've noticed that the equals sign has a slightly different meaning in programming than in math, and you're
+        correct!
+      </p>
+      <p>
+        The assignment operator isn't used to compare if a number equals another number in programming.
+      </p>
+      If you want to do that kind of comparison, then you need to use the equal to == operator.
+      <p>
+        Assignment operators can also be combined with arithmetic operators, so that you can add or subtract values from
+        the left operand.
+      </p>
+      <p>
+        See the table below for the types of assignment operators:
+      </p>
+      <table class="table-fixed border border-collapse border-spacing-2">
+        <thead class="border border-collapse border-spacing-2">
+          <tr class="text-left bg-zinc-100">
+            <th class="border border-collapse border-spacing-2 p-2">Name</th>
+            <th class="border border-collapse border-spacing-2 p-2">Operation Example</th>
+            <th class="border border-collapse border-spacing-2 p-2">Meaning</th>
+          </tr>
+        </thead>
+        <tbody class="border border-collapse">
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Assignment</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x = y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">x = y</td>
+          </tr>
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Addition assignment</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x += y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              x = x + y
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Subtraction assignment	</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x -= y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              x = x - y
+            </td>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Multiplication assignment</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x *= y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              x = x * y
+            </td>
+          </tr>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Division assignment</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x /= y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              x = x / y
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Remainder assignment</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x %= y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              x = x % y
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
