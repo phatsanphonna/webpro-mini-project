@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../global.css">
+  <title>Data Types - JavaScript Guidebook</title>
+</head>
+
+<body>
+  <div class="container mx-auto p-4 flex flex-col gap-4">
+    <h2 class="text-4xl font-semibold">Data Types - JavaScript Guidebook</h2>
+
+    <hr>
+
+    <div class="flex flex-col gap-2">
+      <p>
+        Data Types are simply definitions for different types of data known to a programming language.
+      </p>
+      <p>
+        A data type contains specifications about what you can and can't do with that data.
+      </p>
+      <p>
+        To show you a brain-friendly example, I'm sure you agree that <code>2 + 2 = 4</code>?
+      </p>
+      <p>
+        Well, JavaScript also agrees with that:
+      </p>
+      <pre><code class="language-js">console.log(2 + 2);
+
+// Output: 4</code></pre>
+
+      <p>
+        But what if you try to add a number with letters as shown below?
+      </p>
+      <pre><code class="language-js">console.log(2 + "ABC");</code></pre>
+
+      <h5 class="text-xl font-medium">Output:</h5>
+      <pre><code class="language-txt">2ABC</code></pre>
+
+      <p>
+        Adding a number and letters together will cause JavaScript to concatenate or join the values together.
+      </p>
+      <p>
+        In this section, you're going to learn basic data types that JavaScript knows:
+      </p>
+      <ul class="list-disc ml-4">
+        <li>Strings</li>
+        <li>Numbers</li>
+        <li>Booleans</li>
+        <li>Null</li>
+        <li>Undefined</li>
+      </ul>
+
+      <p>
+        You will also see how these different types react to operators such as + shown in the above example.
+      </p>
+      <p>
+        First, let's start with strings.
+      </p>
+
+      <h4 class="text-2xl font-medium">Strings in JavaScript</h4>
+      <p>Strings are simply data defined as a series of characters.</p>
+      <p>
+        You've seen an example of string data previously when you call the <code>console.log()</code> function to print
+        a message:
+      </p>
+      <pre><code class="language-js">let message = "Hello, Sunshine!";
+console.log(message); // Hello, Sunshine!</code></pre>
+
+      <p>
+        A string needs to be enclosed in quotations. You can use double quotes or single quotes, but they have to match.
+      </p>
+      <p>
+        You'll get an error when you use different quotation marks like this:
+      </p>
+      <pre><code class="language-js">// Invalid or unexpected token
+let message = "Hello';</code></pre>
+
+      <p>
+        You can join two or more strings as one with the plus <code>+</code> symbol. Don't forget to add a space before
+        the next string or you'll get a string without spaces!
+      </p>
+      <pre><code class="language-js">let message = "Hello " + "and " + "Goodbye!";
+console.log(message);
+
+// Output: Hello and Goodbye!</code></pre>
+
+      <p>
+        When printing a variable's value, you can also add strings in the <code>console.log()</code> function directly
+        as follows:
+      </p>
+      <pre><code class="language-js">let message = "Hello, Dave!";
+
+console.log("The message is: " + message);
+
+// Output: The message is: Hello, Dave!</code></pre>
+
+      <p>
+        This is particularly useful when you have multiple strings to <code>console.log</code> in one sentence as
+        follows:
+      </p>
+      <pre><code class="language-js">let name = "John";
+let topic = "JavaScript";
+
+console.log(name + " is learning " + topic + " today");
+
+// Output: John is learning JavaScript today</code></pre>
+
+      <p>
+        Or you can also use the template strings format, which allows you to embed a variable directly inside the string
+        as follows:
+      </p>
+      <pre><code class="language-js">let name = "John";
+let topic = "JavaScript";
+
+console.log(`${name} is learning ${topic} today`);
+
+// Output: John is learning JavaScript today</code></pre>
+
+      <p>
+        To use the template strings format, you need to use the backtick <code>(`)</code> character to wrap the string
+        instead of quotations.
+      </p>
+      <p>
+        The variable is embedded in the string using the dollar symbol and curly brackets as in
+        <code>${variable}</code>.
+      </p>
+      <p>
+        This way, JavaScript knows that you're referencing a variable inside the string.
+      </p>
+      <p>
+        When you have multiple strings to print in a single line, then the template strings format is more convenient
+        because you didn't have to break the string with quotations and concatenations.
+      </p>
+      <p>
+        Next, strings can also represent numbers. You surround the numbers in quotations as follows:
+      </p>
+      <pre><code class="language-js">let score = "10" + "30";
+console.log(score);
+
+// Output: 1030</code></pre>
+
+      <p>
+        When you join two string numbers with a <code>+</code> symbol, JavaScript will join the two numbers instead of
+        performing
+        arithmetic addition.
+      </p>
+      <p>
+        This is how strings work in JavaScript. Let's look at numbers next.
+      </p>
+
+      <h4 class="text-2xl font-medium">Numbers (integers and floats) in JavaScript</h4>
+      <p>
+        Number data types represent different kinds of numbers. There are two types of numbers in JavaScript:
+      </p>
+      <ul class="list-disc ml-4">
+        <li>Integers</li>
+        <li>Floats</li>
+      </ul>
+
+      <p>
+        An integer is a whole number without decimals and fractions. Below, you see examples of two integers
+        <code>x</code> and <code>y</code>:
+      </p>
+      <pre><code class="language-js">let x = 1;
+let y = 2;
+
+console.log(x + y);
+
+// Output: 3</code></pre>
+
+      <p>
+        On the other hand, floats refer to numbers with decimal points like this:
+      </p>
+      <pre><code class="language-js">let f = 1.2;
+let z = 2.35;
+
+console.log(f + z);
+
+// Output: 3.55</code></pre>
+
+      <p>
+        To create a float, you need to write a number and use <code>.</code> to define the decimal values.
+      </p>
+      <p>
+        With number types, you can perform arithmetic operations such as addition +, subtraction <code>-</code>,
+        division <code>/</code>, and multiplication <code>*</code> just like how you use a calculator.
+      </p>
+
+      <h4 class="text-2xl font-medium">Booleans in JavaScript</h4>
+      <p>
+        Boolean is a type that represents <code>true</code> and <code>false</code> values.
+      </p>
+      <p>
+        You can think of Booleans as a light switch that can only be in one of two positions: on or off.
+      </p>
+      <p>
+        So it is with Boolean values in programming languages. They are used when JavaScript needs to make a decision:
+        Go left or go right? Right or wrong?
+      </p>
+      <p>
+        Here's how you create Boolean values in JavaScript:
+      </p>
+      <pre><code class="language-js">let on = true;
+let off = false;</code></pre>
+
+      <p>
+        This data type is frequently used when you need to make a decision using a control flow. You'll see why Boolean
+        values are very useful in developing a program later in Section 9.
+      </p>
+
+      <h4 class="text-2xl font-medium">Undefined in JavaScript</h4>
+      <p>
+        Undefined is a data type in JavaScript used to represent a variable that hasn't been assigned any value yet.
+      </p>
+      <p>
+        Anytime you declared a variable without assigning any value, the <code>undefined</code> value will be assigned
+        to that
+        variable. For example:
+      </p>
+      <pre><code class="language-js">let first_name;
+
+console.log(first_name); // undefined</code></pre>
+
+      <p>
+        You can also assign <code>undefined</code> to a variable explicitly as follows:
+      </p>
+      <pre><code class="language-js">let last_name = undefined;</code></pre>
+
+      <p>
+        But this is usually not recommended, because JavaScript has another value called <code>null</code> which is used
+        to mark a variable as empty.
+      </p>
+
+      <h4 class="text-2xl font-medium">Null in JavaScript</h4>
+      <p>
+        The <code>null</code> value is a special data type that represents an empty or unknown value. Here's how you
+        assign a variable as null:
+      </p>
+      <pre><code class="language-js">let first_name = null;</code></pre>
+
+      <p>
+        The code above means that the value of <code>first_name</code> is empty or unknown.
+      </p>
+      <p>
+        At this point, you may be thinking what's the difference between <code>undefined</code> and <code>null</code>?
+        They seem to serve a
+        similar purpose.
+      </p>
+      <p>
+        And you are correct. Both <code>undefined</code> and <code>null</code> are values that represent nothing, and
+        other programming languages
+        usually only have one, and that is null.
+      </p>
+      <p>
+        In JavaScript, the <code>undefined</code> value is reserved as the default value when a variable is declared,
+        while <code>null</code>
+        means you intentionally assign an "empty" value for the variable.
+      </p>
+      <p>
+        For now, just keep in mind that JavaScript treats <code>undefined</code> as the "default" empty value and
+        <code>null</code> as the "intentional" empty value.
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
