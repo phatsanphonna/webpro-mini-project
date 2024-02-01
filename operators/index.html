@@ -182,7 +182,7 @@ let on = true;</code></pre>
             </td>
           </tr>
           <tr>
-            <td class="border border-collapse border-spacing-2 p-2">Subtraction assignment	</td>
+            <td class="border border-collapse border-spacing-2 p-2">Subtraction assignment </td>
             <td class="border border-collapse border-spacing-2 p-2"><code>x -= y</code></td>
             <td class="border border-collapse border-spacing-2 p-2">
               x = x - y
@@ -193,7 +193,6 @@ let on = true;</code></pre>
             <td class="border border-collapse border-spacing-2 p-2">
               x = x * y
             </td>
-          </tr>
           </tr>
           <tr>
             <td class="border border-collapse border-spacing-2 p-2">Division assignment</td>
@@ -211,6 +210,201 @@ let on = true;</code></pre>
           </tr>
         </tbody>
       </table>
+
+      <h4 class="text-2xl font-medium">The comparison operators</h4>
+      <p>
+        Comparison operators are used to compare two values. The operators in this category will return Boolean values:
+        either <code>true</code> or <code>false</code>.
+      </p>
+      <p>
+        The following table shows all comparison operators available in JavaScript:
+      </p>
+      <table class="table-fixed border border-collapse border-spacing-2">
+        <thead class="border border-collapse border-spacing-2">
+          <tr class="text-left bg-zinc-100">
+            <th class="border border-collapse border-spacing-2 p-2">Name</th>
+            <th class="border border-collapse border-spacing-2 p-2">Operation Example</th>
+            <th class="border border-collapse border-spacing-2 p-2">Meaning</th>
+          </tr>
+        </thead>
+        <tbody class="border border-collapse">
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Equal</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x == y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the operands are equal
+            </td>
+          </tr>
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Not equal</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x != y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the operands are not equal
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Strict equal</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x === y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the operands are equal and have the same type
+            </td>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Strict not equal</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x !== y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the operands are not equal, or have different types
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Greater than</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x > y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the left operand is greater than the right operand
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Greater than or equal</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x >= y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the left operand is greater than or equal to the right operand
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Less than</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x < y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the left operand is less than the right operand
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Less than or equal</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x <= y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if the left operand is less than or equal to the right operand
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Here are some examples of using these operators:
+      </p>
+      <pre><code class="language-js">console.log(9 == 9); // true
+
+console.log(9 != 20); // true
+
+console.log(2 > 10); // false
+
+console.log(2 < 10); // true
+
+console.log(5 >= 10); // false
+
+console.log(10 <= 10); // true</code></pre>
+
+      <p>
+        The comparison operators can also be used to compare strings like this:
+      </p>
+      <pre><code class="language-js">console.log("ABC" == "ABC"); // true
+
+console.log("ABC" == "abc"); // false
+
+console.log("Z" == "A"); // false</code></pre>
+
+      <p>
+        String comparisons are case-sensitive, as shown in the example above.
+      </p>
+      <p>
+        JavaScript also has two versions of each comparison operator: loose and strict.
+      </p>
+      <p>
+        In strict mode, JavaScript will compare the types without performing a type coercion.
+      </p>
+      <p>
+        You need to add one more equal = symbol to the operator as follows
+      </p>
+      <pre><code class="language-js">console.log("9" == 9); // true
+console.log("9" === 9); // false
+
+console.log(true == 1); // true
+console.log(true === 1); // false</code></pre>
+
+      <p>
+        You should use the strict comparison operators unless you have a specific reason not to.
+      </p>
+
+      <h4 class="text-2xl font-medium">Logical operators</h4>
+      <p>
+        The logical operators are used to check whether one or more expressions result in either <code>True</code> or
+        <code>False</code>.
+      </p>
+      <p>
+        There are three logical operators that JavaScript has:
+      </p>
+      <table class="table-fixed border border-collapse border-spacing-2">
+        <thead class="border border-collapse border-spacing-2">
+          <tr class="text-left bg-zinc-100">
+            <th class="border border-collapse border-spacing-2 p-2">Name</th>
+            <th class="border border-collapse border-spacing-2 p-2">Operation Example</th>
+            <th class="border border-collapse border-spacing-2 p-2">Meaning</th>
+          </tr>
+        </thead>
+        <tbody class="border border-collapse">
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Logical AND</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x && y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if all operands are <code>true</code>, else returns <code>false</code>
+            </td>
+          </tr>
+          <tr class="border border-collapse">
+            <td class="border border-collapse border-spacing-2 p-2">Logical OR</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>x || y</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Returns <code>true</code> if one of the operands is <code>true</code>, else returns <code>false</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-collapse border-spacing-2 p-2">Logical NOT</td>
+            <td class="border border-collapse border-spacing-2 p-2"><code>!x</code></td>
+            <td class="border border-collapse border-spacing-2 p-2">
+              Reverse the result: returns <code>true</code> if <code>false</code> and vice versa
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        These operators can only return Boolean values. For example, you can determine whether '7 is greater than 2' and
+        '5 is greater than 4':
+      </p>
+      <pre><code class="language-js">console.log(7 > 2 && 5 > 4); // true</code></pre>
+
+      <p>These logical operators follow the laws of mathematical logic:</p>
+      <ul class="list-decimal ml-4">
+        <li><code>&&</code> AND operator - if any expression returns <code>false</code>, the result is
+          <code>false</code>
+        </li>
+        <li><code>||</code> OR operator - if any expression returns <code>true</code>, the result is <code>true</code>
+        </li>
+        <li><code>!</code> NOT operator - negates the expression, returning the opposite.</li>
+      </ul>
+
+      <h4 class="text-2xl font-medium">The <code>typeof</code> operator</h4>
+      <p>
+        JavaScript allows you to check the data type by using the <code>typeof</code> operator. To use the operator, you
+        need to call it before specifying the data:
+      </p>
+      <pre><code class="language-js">let x = 5;
+console.log(typeof x) //  'number'
+
+console.log(typeof "Nathan") // 'string'
+
+console.log(typeof true) // 'boolean'</code></pre>
+
+      <p>
+        The <code>typeof</code> operator returns the type of the data as a string. The 'number' type represents both
+        integer and float types, the string and boolean represent their respective types.
+      </p>
     </div>
   </div>
 </body>
